@@ -1,30 +1,34 @@
-import React from 'react'
+import { Current } from "@/interface/dashboard";
 
-const Table2 = () => {
-  return (
-    <table className="text-2xl h-[1vw]">
-  <thead>
-    <tr>
-      <th className="border border-black  bg-blue-300  ">Current</th>
-      <th className="border border-black  bg-blue-300 "></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td className="border border-black  ">A_L1</td>
-      <td className="border border-black  ">0.947633982</td>
-    </tr>
-    <tr>
-      <td className="border border-black  ">A_L2</td>
-      <td className="border border-black  ">0.947633982</td>
-    </tr>
-    <tr>
-      <td className="border border-black  ">A_L3</td>
-      <td className="border border-black  ">0.947633982</td>
-    </tr>
-  </tbody>
-</table>
-  )
+interface TableCurrentProps {
+  current: Current;
 }
 
-export default Table2
+const Table2 = ({ current }: TableCurrentProps) => {
+  return (
+    <table className="text-2xl h-[1vw]">
+      <thead>
+        <tr>
+          <th className="border border-black  bg-blue-300  ">Current</th>
+          <th className="border border-black  bg-blue-300 "></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td className="border border-black  ">A_L1</td>
+          <td className="border border-black  ">{current.aL1}</td>
+        </tr>
+        <tr>
+          <td className="border border-black  ">A_L2</td>
+          <td className="border border-black  ">{current.aL2}</td>
+        </tr>
+        <tr>
+          <td className="border border-black  ">A_L3</td>
+          <td className="border border-black  ">{current.aL3}</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+};
+
+export default Table2;

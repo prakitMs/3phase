@@ -7,28 +7,27 @@ import TableEA from "@/components/tableEA";
 import TablePF from "@/components/tablePF";
 import TablePQ from "@/components/tablePQ";
 import TableEC from "@/components/tableEC";
+import { useGetDashboardPhase } from "@/api/dashboard";
 
+export default async function DashboardPage() {
+  const data = await useGetDashboardPhase();
 
-export default function DashboardPage() {
   return (
-
-<div>
-  <div className="text-red-950 text-5xl mb-5"> 
-    ข้อมูลอัพเดตเมื่อเวลา 2025-02-19 15:58:36 bangkok
-  </div>
-  <div className="grid h-48 grid-cols-3 place-content-between gap-5  ml-20">
-  <Table/>
-  <Table2/>
-  <Table3/>
-  <Table4/>
-  <Table5/>
-  <TableEA/>
-  <TablePF/>
-  <TablePQ/>
-  <TableEC/>
-  </div>
-</div>
-
-    
+    <div>
+      <div className="text-red-950 text-5xl mb-5">
+        ข้อมูลอัพเดตเมื่อเวลา 2025-02-19 15:58:36 bangkok
+      </div>
+      <div className="grid h-48 grid-cols-3 place-content-between gap-5  ml-20">
+        <Table />
+        <Table2 current={data.current} />
+        <Table3 />
+        <Table4 />
+        <Table5 />
+        <TableEA />
+        <TablePF />
+        <TablePQ />
+        <TableEC />
+      </div>
+    </div>
   );
 }
