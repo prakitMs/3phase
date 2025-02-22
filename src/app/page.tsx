@@ -1,13 +1,17 @@
-import Table from "@/components/table";
-import Table2 from "@/components/table2";
-import Table3 from "@/components/table3";
-import Table4 from "@/components/table4";
-import Table5 from "@/components/table5";
-import TableEA from "@/components/tableEA";
-import TablePF from "@/components/tablePF";
-import TablePQ from "@/components/tablePQ";
-import TableEC from "@/components/tableEC";
 import { useGetDashboardPhase } from "@/api/dashboard";
+import TableVoltage from "@/components/table-voltage";
+import TableVoltageSecond from "@/components/table-voltage-second";
+import TableCurrent from "@/components/table-current";
+import TableFrequency from "@/components/table-frequency";
+import TableEnergyReactive from "@/components/table-energy-reactive";
+import TableEnergyActive from "@/components/table-energy-active";
+import TableEnergyApparent from "@/components/table-energy-apparant";
+import TableActivePower from "@/components/table-active-power";
+import TablePowerFactor from "@/components/table-power-factor";
+import TablePowerQuality from "@/components/table-power-quality";
+import TablePowerQualityTwo from "@/components/table-power-quality-two";
+import TableEnergyCost from "@/components/table-energy-cost";
+
 
 export default async function DashboardPage() {
   const data = await useGetDashboardPhase();
@@ -15,18 +19,21 @@ export default async function DashboardPage() {
   return (
     <div>
       <div className="text-red-950 text-5xl mb-5">
-        ข้อมูลอัพเดตเมื่อเวลา 2025-02-19 15:58:36 bangkok
+        ข้อมูลอัพเดตเมื่อเวลา {data.timestamp} bangkok
       </div>
       <div className="grid h-48 grid-cols-3 place-content-between gap-5  ml-20">
-        <Table />
-        <Table2 current={data.current} />
-        <Table3 />
-        <Table4 />
-        <Table5 />
-        <TableEA />
-        <TablePF />
-        <TablePQ />
-        <TableEC />
+        <TableVoltage voltage={data.voltage}/>
+        <TableVoltageSecond voltageSecond={data.voltage}/>
+        <TableCurrent current={data.current} />
+        <TableActivePower activePower={data.activePower}/>
+        <TableEnergyActive energyActive={data.energyActive}/>
+        <TableEnergyReactive energyReactive={data.energyReactive} />
+        <TableEnergyApparent energyApparant={data.energyApparent}/>
+        <TablePowerFactor powerFactor={data.powerFactor} />
+        <TablePowerQuality powerQuality={data.powerQuality} />
+        <TablePowerQualityTwo powerQuality2={data.powerQuality} />
+        <TableFrequency frequency={data.frequency}/>
+        <TableEnergyCost energyCost={data.energyCost} />
       </div>
     </div>
   );
