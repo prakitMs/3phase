@@ -1,18 +1,18 @@
-export interface Dashboard {
+export interface IDashboard {
   timestamp: string;
-  voltage: Voltage;
-  current: Current;
-  frequency: Frequency;
-  activePower: ActivePower;
-  energyActive: EnergyActive;
-  energyReactive: EnergyReactive;
-  energyApparent: EnergyApparent;
-  powerFactor: PowerFactor;
-  powerQuality: PowerQuality;
-  energyCost: EnergyCost;
+  voltage: IVoltage;
+  current: ICurrent;
+  frequency: IFrequency;
+  activePower: IActivePower;
+  energyActive: IEnergyActive;
+  energyReactive: IEnergyReactive;
+  energyApparent: IEnergyApparent;
+  powerFactor: IPowerFactor;
+  powerQuality: IPowerQuality;
+  energyCost: IEnergyCost;
 }
 
-export interface Voltage {
+export interface IVoltage {
   vu1N: number;
   vu2N: number;
   vu3N: number;
@@ -21,52 +21,52 @@ export interface Voltage {
   vU31: number;
 }
 
-export interface Current {
+export interface ICurrent {
   aL1: number;
   aL2: number;
   aL3: number;
 }
 
-export interface Frequency {
+export interface IFrequency {
   freq: number;
 }
 
-export interface ActivePower {
+export interface IActivePower {
   apL1: number;
   apL2: number;
   apL3: number;
   apTotal: number;
 }
 
-export interface EnergyActive {
+export interface IEnergyActive {
   eAL1: number;
   eAL2: number;
   eAL3: number;
   eATotal: number;
 }
 
-export interface EnergyReactive {
+export interface IEnergyReactive {
   eRL1: number;
   eRL2: number;
   eRL3: number;
   eRTotal: number;
 }
 
-export interface EnergyApparent {
+export interface IEnergyApparent {
   eApL1: number;
   eApL2: number;
   eApL3: number;
   eApT: number;
 }
 
-export interface PowerFactor {
+export interface IPowerFactor {
   pfL1: number;
   pfL2: number;
   pfL3: number;
   pfT: number;
 }
 
-export interface PowerQuality {
+export interface IPowerQuality {
   vunb: number;
   cunb: number;
   thdv1: number;
@@ -74,25 +74,13 @@ export interface PowerQuality {
   thdv3: number;
 }
 
-export interface EnergyCost {
-  l1: L1;
-  l2: L2;
-  l3: L3;
-  total: Total;
+export interface IEnergyCost {
+  l1: ILine;
+  l2: ILine;
+  l3: ILine;
+  total: ILine;
 }
 
-export interface L1 {
-  energyKWh: number;
-}
-
-export interface L2 {
-  energyKWh: number;
-}
-
-export interface L3 {
-  energyKWh: number;
-}
-
-export interface Total {
+export interface ILine {
   energyKWh: number;
 }
