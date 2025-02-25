@@ -9,25 +9,25 @@ const TableEnergyCost = ({energyCost}:TableEnergyCost) => {
   <thead>
     <tr>
       <th className="border border-black bg-blue-300 ">Energy Cost</th>
-      <th className="border border-black bg-blue-300  "></th>
+      <th className="border border-black bg-blue-300  ">kWh</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td className="border border-black  ">L1</td>
-      <td className="border border-black w-10">{energyCost.l1.energyKWh}kWh</td>
+      <td className="border border-black w-10">{energyCost.l1.energyKWh}</td>
     </tr>
     <tr>
       <td className="border border-black  ">L2</td>
-      <td className="border border-black  ">{energyCost.l2.energyKWh}kWh</td>
+      <td className="border border-black  ">{energyCost.l2.energyKWh}</td>
     </tr>
     <tr>
       <td className="border border-black  ">L3</td>
-      <td className="border border-black  ">{energyCost.l3.energyKWh}kWh</td>
+      <td className="border border-black  ">{energyCost.l3.energyKWh}</td>
     </tr>
     <tr>
       <td className="border border-black  ">Total</td>
-      <td className="border border-black  ">{energyCost.total.energyKWh}kWh</td>
+      <td className="border border-black  ">{energyCost.total.energyKWh}</td>
     </tr>
   </tbody>
 </table>

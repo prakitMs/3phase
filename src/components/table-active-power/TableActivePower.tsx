@@ -9,7 +9,7 @@ const TableActivePower = ({activePower}: TableActivePowerProps) => {
     <table className="text-2xl h-[1vw]">
   <thead>
     <tr>
-      <th className="border border-black bg-blue-300 ">Active Power</th>
+      <th className="border border-black bg-blue-300 ">Active  Power</th>
       <th className="border border-black bg-blue-300  "></th>
     </tr>
   </thead>

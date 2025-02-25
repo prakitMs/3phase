@@ -14,7 +14,10 @@ export const SIDE_MENU = [
     label: "alerts",
     link: PAGE_ROUTE.alerts,
   },
-
+  {
+    label: "table",
+    link: PAGE_ROUTE.table,
+  },
   {
     label: "setting",
     link: PAGE_ROUTE.setting,
