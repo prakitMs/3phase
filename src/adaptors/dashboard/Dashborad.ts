@@ -87,4 +87,14 @@ export class Dashboard implements IDashboard {
       labels: voltage.map((_, idx) => (idx + 1).toString()),
     };
   }
+
+  get chartVoltage() {
+    const { vu1N, vu2N, vu3N } = this.voltage;
+    return { vu1N, vu2N, vu3N };
+  }
+
+  get chartVoltageSecond() {
+    const { vU12, vU23, vU31 } = this.voltage;
+    return { vU12, vU23, vU31 };
+  }
 }

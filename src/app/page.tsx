@@ -4,7 +4,6 @@ import LineChartEnergyCost from "@/components/line-chart-energy-cost";
 
 export default async function Setting() {
   const data = await useGetDashboardPhase();
-  console.log(data);
 
   return (
     <div>
