@@ -1,15 +1,4 @@
 import { useGetDashboardPhase } from "@/api/dashboard";
-import ChartVoltageSecond from "@/components/chart-voltage-second";
-import ChartCurrent from "@/components/chart-current";
-import ChartFrequency from "@/components/chart-frequency";
-import ChartEnergyActive from "@/components/chart-energy-active";
-import ChartActivePower from "@/components/chart-active-power";
-import ChartEnergyReactive from "@/components/chart-energy-reactive";
-import ChartEnergyApparent from "@/components/chart-energy-apparent";
-import ChartPowerFactor from "@/components/chart-power-factor";
-import ChartPowerQuality from "@/components/chart-power-quality";
-import ChartPowerQualitySecond from "@/components/chart-power-quality-second";
-import ChartEnergyCost from "@/components/chart-energy-cost";
 import BarChart from "@/components/bar-chart";
 
 export default async function Dataloging() {
